@@ -1,20 +1,36 @@
-<div class="header-wrapper">
-    <p class="header-logo">ASTRO</p>
-    <ul class="menu">
-        <li class="menu-element">WORKS</li>
-        <li class="menu-element">ABOUT ME</li>
-        <li class="menu-element">CONTACT</li>
-    </ul>
-</div>
+---
+
+---
+
+<header class="header">
+    <div class="header-inner">
+        <p class="header-logo">ASTRO</p>
+        <ul class="menu">
+            <li class="menu-element"><a href="works">WORKS</a></li>
+            <li class="menu-element"><a href="">ABOUT ME</a></li>
+            <li class="menu-element"><a href="">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
 
 <style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
     li {
         list-style: none;
     }
 
-    .header-wrapper {
+    .header {
+        width: 100vw;
+        position: fixed;
+    }
+
+    .header-inner {
         background-color: #fff;
-        height: 30px;
+        height: 25px;
         display: flex;
         justify-content: space-between;
         align-items: center;

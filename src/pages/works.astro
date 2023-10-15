@@ -1,9 +1,86 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import WorksCard from "../components/WorksCard.astro";
 ---
 
 <Layout title="Works">
     <Header />
-    <h1>WORKS</h1>
+    <div class="heading">
+        <h1>WORKS</h1>
+        <p>作品一覧</p>
+    </div>
+    <div class="gallery">
+        <ul class="gallery-container">
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+            <WorksCard href="#" title="ReversePerspective" tag="MotionGrapgics / Programming" year="2023"/>
+        </ul>
+    </div>
 </Layout>
+
+<style>
+    .heading {
+        width: 100vw;
+        background-color: #eeff00;
+        height: 150px;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    
+    .heading p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading h1 {
+        margin: 0 0 0 0;
+    }
+
+    .gallery-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 30px 0 0 0;
+        padding: 0;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    .gallery {
+        overflow-x: hidden;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    @media (max-width: 960px) {
+        .gallery-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .gallery {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery-container {
+            grid-template-columns: 100%;
+            gap: 20px;
+        }
+</style>

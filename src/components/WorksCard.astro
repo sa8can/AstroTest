@@ -1,0 +1,108 @@
+---
+interface Props {
+    title: string;
+    year: string;
+    href: string;
+    tag: string;
+}
+
+const { href, title, year, tag } = Astro.props;
+---
+
+<li class="link-card">
+    <a href={href}>
+        <h2>
+            {title}
+        </h2>
+        <p class="tag">
+            {tag}
+        </p>
+        <p class="year">
+            {year}
+        </p>
+    </a>
+</li>
+<style>
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: inherit;
+    }
+    .link-card {
+        list-style: none;
+        display: flex;
+        background-color: #acacac;
+        background-image: none;
+        background-position: 100%;
+        text-align: center;
+        align-items: center;
+        color: transparent;
+        aspect-ratio: 1 / 1;
+        transform: scale(1);
+        transition-duration: 0.1s;
+        text-decoration: none;
+    }
+
+    .link-card a {
+        width: 100%;
+        height: auto;
+        text-decoration: none;
+        line-height: 1.4;
+        padding: calc(1.5rem - 1px);
+    }
+
+    h2 {
+        margin: 10px 0 0 0;
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+
+    p {
+        margin: 0;
+        letter-spacing: 0.05rem;
+    }
+
+    .tag {
+        margin-top: 0.4rem;
+        font-weight: 200;
+        font-size: 0.8rem;
+    }
+
+    .year {
+        margin-top: 0.2rem;
+        font-weight: 200;
+        font-size: 0.8rem;
+    }
+
+    .link-card:is(:hover, :focus-within) {
+        background-color: blue;
+        color: white;
+        transition-duration: 0.2s;
+        transform: scale(0.99);
+    }
+
+    @media (max-width: 960px) {
+        .link-card {
+            color: black;
+            text-align: left;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+        }
+
+        .tag {
+            margin-top: 0.1rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .year {
+            margin-top: 0.1rem;
+            font-weight: 300;
+            font-size: 0.8rem;
+        }
+    }
+</style>
